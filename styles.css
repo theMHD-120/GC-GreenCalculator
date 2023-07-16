@@ -1,0 +1,99 @@
+body {
+  background-color: rgb(1, 19, 10);
+  animation: back_color 3s linear 500ms infinite;
+}
+
+@keyframes back_color {
+  0% {background-color: rgb(1, 19, 10);}
+  50% {background-color: rgb(2, 41, 21);}
+  100% {background-color: rgb(1, 19, 10);}
+}
+
+#main_body {
+  width: 500px;
+  margin: auto;
+  padding: 10px;
+  height: 654px;
+  margin-top: 145px;
+  border-radius: 18px;
+  background-color: rgb(3, 67, 32);
+  border: rgb(4, 172, 85) solid 2.5px;
+}
+
+#lbl_res {
+  margin: auto;
+  width: 463px;
+  height: 97px;
+  font-size: 65px;
+  margin-top: 17px;
+  padding-top: 24px;
+  text-align: center;
+  color: rgb(3, 67, 32);
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-family: 'digital-clock-font';
+  background-color: rgb(4, 120, 60);
+  border: rgb(4, 172, 85) solid 2px;
+}
+
+#btn_table {
+  margin: auto;
+  margin-top: 14px;
+}
+
+button {
+  margin: auto;
+  width: 110px;
+  height: 110px;
+  cursor: pointer;
+  font-size: 23px;
+  transition: 300ms;
+  border-radius: 7px;
+  background-color: rgb(4, 138, 69);
+  border: rgb(5, 201, 100) solid 2px;
+}
+
+button:hover {
+  background-color: rgb(8, 164, 83);
+  border: rgb(7, 245, 122) solid 2px;
+}
+
+button:active {
+  color: rgb(1, 44, 14);
+  border: rgb(119, 241, 178) solid 2px;
+  background-color: rgb(119, 241, 178);
+}
+
+#operator, #operator_eq {
+  font-size: 30px;
+  background-color: rgb(4, 172, 85);
+}
+
+#operator:hover, #operator_eq:hover {
+  background-color: rgb(6, 235, 117);
+  border: rgb(6, 235, 117) solid 2px;
+}
+
+#operator:focus, #operator_eq:active {
+  color: rgb(1, 44, 14);
+  border: rgb(119, 241, 178) solid 2px;
+  background-color: rgb(119, 241, 178);
+}
+
+#name {
+  font-size: 23px;
+  margin-top: 5px;
+  text-align: center;
+  color: rgb(119, 241, 178);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#name_hover {
+  transition: 300ms;
+}
+
+#name_hover:hover {
+  color: rgb(193, 239, 215);
+}
