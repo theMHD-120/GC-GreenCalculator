@@ -91,7 +91,7 @@ button:active {
 }
 
 #name_hover {
-  transition: 300ms;
+  transition: 200ms;
 }
 
 #name_hover:hover {
