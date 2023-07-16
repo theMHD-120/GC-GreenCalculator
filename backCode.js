@@ -72,6 +72,8 @@ function calculate_last_res() {
                 last_result_num = last_number;
                 break;
         }
+        
+        last_result_num = Number(last_result_num.toFixed(8));
         last_result = last_result_num.toString();
     } 
     else {
