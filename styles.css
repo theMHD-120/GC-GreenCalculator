@@ -10,7 +10,7 @@ body {
 }
 
 #main_body {
-  width: 500px;
+  width: 710px;
   margin: auto;
   padding: 10px;
   height: 654px;
@@ -22,7 +22,7 @@ body {
 
 #lbl_res {
   margin: auto;
-  width: 463px;
+  width: 680px;
   height: 97px;
   font-size: 65px;
   margin-top: 17px;
@@ -48,7 +48,7 @@ button {
   width: 110px;
   height: 110px;
   cursor: pointer;
-  font-size: 23px;
+  font-size: 30px;
   transition: 300ms;
   border-radius: 7px;
   background-color: rgb(4, 138, 69);
@@ -66,17 +66,17 @@ button:active {
   background-color: rgb(119, 241, 178);
 }
 
-#operator, #operator_eq {
+#operator_even, #operator_odd {
   font-size: 30px;
   background-color: rgb(4, 172, 85);
 }
 
-#operator:hover, #operator_eq:hover {
+#operator_even:hover, #operator_odd:hover {
   background-color: rgb(6, 235, 117);
   border: rgb(6, 235, 117) solid 2px;
 }
 
-#operator:focus, #operator_eq:active {
+#operator_even:focus, #operator_odd:active {
   color: rgb(1, 44, 14);
   border: rgb(119, 241, 178) solid 2px;
   background-color: rgb(119, 241, 178);

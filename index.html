@@ -25,7 +25,15 @@
                         <button onclick="click_numbers(9)">9</button>
                     </td>
                     <td>
-                        <button id="operator" onclick="click_operators('+')">+</button>
+                        <button id="operator_even" onclick="click_even_operators('+')">+</button>
+                    </td>
+                    <td>
+                        <button id="operator_odd" onclick="click_odd_operators('back')">Back</button>
+                    </td>
+                    <td>
+                        <button id="operator_odd" title="On/Reset" tabindex="1" onclick="click_odd_operators('o/r')">
+                            On/Re
+                        </button>
                     </td>
                 </tr>
                 <tr>
@@ -39,7 +47,13 @@
                         <button onclick="click_numbers(6)">6</button>
                     </td>
                     <td>
-                        <button id="operator" class="math_op" onclick="click_operators('-')">-</button>
+                        <button id="operator_even" onclick="click_even_operators('-')">−</button>
+                    </td>
+                    <td>
+                        <button id="operator_even" title="Mod" onclick="click_even_operators('%')">%</button>
+                    </td>
+                    <td>
+                        <button id="operator_odd" onclick="click_odd_operators('off')">Off</button>
                     </td>
                 </tr>
                 <tr>
@@ -53,21 +67,30 @@
                         <button onclick="click_numbers(3)">3</button>
                     </td>
                     <td>
-                        <button id="operator" onclick="click_operators('*')">*</button>
+                        <button id="operator_even" onclick="click_even_operators('*')">*</button>
+                    </td>
+                    <td>
+                        <button id="operator_even" title="Power" onclick="click_even_operators('^')">^</button>
+                    </td>
+                    <td>
+                        <button id="operator_odd" title="Factorial" onclick="click_odd_operators('!')">!</button>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <button id="operator_eq" onclick="click_operators('=')">=</button>
+                        <button id="operator_odd" onclick="click_odd_operators('+/-')">+/−</button>
                     </td>
                     <td>
                         <button onclick="click_numbers(0)">0</button>
                     </td>
                     <td>
-                        <button id="operator" onclick="click_operators('.')">.</button>
+                        <button id="operator_odd" onclick="click_odd_operators('.')">.</button>
                     </td>
                     <td>
-                        <button id="operator" onclick="click_operators('/')">/</button>
+                        <button id="operator_even" onclick="click_even_operators('/')">÷</button>
+                    </td>
+                    <td>
+                        <button id="operator_odd" onclick="click_even_operators('=')">=</button>
                     </td>
                 </tr>
             </table>
