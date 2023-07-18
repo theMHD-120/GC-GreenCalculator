@@ -61,10 +61,10 @@ function save_last_number() {
         number_str = "0";
     last_number = Number(number_str);
 
-    if (is_number_neg) {
-        last_number *= -1;
-        is_number_neg = false;
-    }
+    // if (is_number_neg) {
+    //     last_number *= -1;
+    //     is_number_neg = false;
+    // }
 }
 
 function calculate_last_res() {
@@ -126,16 +126,17 @@ function click_odd_operators(op) {
             document.getElementById("lbl_res").innerHTML = number_str += ".";
     }
     else if (op == "o/r") {
-        if (document.getElementById("lbl_res").style == lbl_res_back_color) {
-            operator = "";
-            last_number = 0;  
-            last_result = ""; 
-            last_result_num = 0;
-            is_number_neg = false;
-        } 
-        else
+        if (document.getElementById("lbl_res").style != lbl_res_back_color)
             document.getElementById("lbl_res").style = lbl_res_back_color;
+
+        operator = ""; 
         number_str = "";
+        last_number = 0; 
+        last_result = ""; 
+        last_result_num = 0;
+        is_number_neg = false;
+        is_number_entered = false;
+        is_factorial_entered = false;
         click_numbers(0);
     }
     else if (op == "off") {
@@ -144,15 +145,31 @@ function click_odd_operators(op) {
         number_str = "";
         last_result = ""; 
         is_number_neg = false;
+        is_number_entered = false;
+        is_factorial_entered = false;
         document.getElementById("lbl_res").innerHTML = "";
         document.getElementById("lbl_res").style = "background-color: rgb(4, 120, 60);";
     }
     else if (!(number_str == "" && operator == "")) {
         if (op == "back") {
-            number_str.replace(number_str.indexOf(-1), "");
+            if (number_str.length > 1)
+                number_str = number_str.slice(0, -1);
+            else
+                number_str = "0";
+                
+            document.getElementById("lbl_res").innerHTML = number_str;
+            if (number_str == "0")
+                number_str = "";
         }
         else if (op == "+/-") {
-            is_number_neg = true;
+            if (is_number_neg) {
+                is_number_neg = false;
+                number_str = "-" + number_str;
+            }
+            else {
+                is_number_neg = true;
+                number_str = number_str;
+            }
         }
         else if (op == "!") {
             if (is_number_entered) {
