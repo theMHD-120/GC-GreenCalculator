@@ -1,12 +1,21 @@
-var operator = ""
+var operator = "";
 var number_str = "";
-var last_number = 0;  // last entered number;
-var last_result = ""; // last obtained number (last result);
+var last_number = 0; // last entered number;
+var last_result = ""; // last obtained number (result);
+var last_result_num = 0; // last result with number type;
 var is_number_neg = false; // if entered number was negative;
+var is_number_entered = false; // used in factorial operation;
+var is_factorial_entered = false; // used in click number func;
 var lbl_res_back_color = "background-color: rgb(6, 235, 117);";
 
 function click_numbers(number) {
+    is_number_entered = true;
     document.getElementById("lbl_res").style = lbl_res_back_color;
+
+    if (is_factorial_entered) {
+        number_str = "";
+        is_factorial_entered = false;
+    }
 
     if (number_str.length < 12) {
         if (number_str == "0")
@@ -52,12 +61,14 @@ function save_last_number() {
         number_str = "0";
     last_number = Number(number_str);
 
-    if (is_number_neg)
+    if (is_number_neg) {
         last_number *= -1;
+        is_number_neg = false;
+    }
 }
 
 function calculate_last_res() {
-    var last_result_num = Number(last_result);
+    last_result_num = Number(last_result);
     if (last_result != "") {
         switch(operator) {
             case "+":
@@ -78,10 +89,6 @@ function calculate_last_res() {
             case "^":
                 last_result_num **= last_number;
                 break;
-            case "!":
-                last_result_num = last_number;
-                last_result_num *= 10; // factorial
-                break;
             case "=":
                 last_result_num = last_number;
                 break;
@@ -91,17 +98,12 @@ function calculate_last_res() {
         last_result = last_result_num.toString();
     } 
     else {
-        if (operator == "!") {
-            last_result_num = last_number;
-            last_result_num *= 10; // factorial
-            last_result = last_result_num.toString();
-        }
-        else 
-            last_result = number_str;
+        last_result = number_str;
     }
 }
 
 function click_even_operators(op) {
+    is_number_entered = false;
     if (!(number_str == "" && operator == "")) {
         if (number_str != "") {
             save_last_number();
@@ -125,18 +127,19 @@ function click_odd_operators(op) {
     }
     else if (op == "o/r") {
         if (document.getElementById("lbl_res").style == lbl_res_back_color) {
-            operator = ""
+            operator = "";
             last_number = 0;  
-            number_str = "0";
             last_result = ""; 
+            last_result_num = 0;
             is_number_neg = false;
         } 
         else
             document.getElementById("lbl_res").style = lbl_res_back_color;
-        document.getElementById("lbl_res").innerHTML = "0";
+        number_str = "";
+        click_numbers(0);
     }
     else if (op == "off") {
-        operator = ""
+        operator = "";
         last_number = 0;  
         number_str = "";
         last_result = ""; 
@@ -144,7 +147,28 @@ function click_odd_operators(op) {
         document.getElementById("lbl_res").innerHTML = "";
         document.getElementById("lbl_res").style = "background-color: rgb(4, 120, 60);";
     }
-    else if (op == "back") {
-        number_str -= lastIndexOf(number_str);
+    else if (!(number_str == "" && operator == "")) {
+        if (op == "back") {
+            number_str.replace(number_str.indexOf(-1), "");
+        }
+        else if (op == "+/-") {
+            is_number_neg = true;
+        }
+        else if (op == "!") {
+            if (is_number_entered) {
+                save_last_number();
+                last_number *= 10; // factorial
+                last_result = last_number.toString();
+                number_str = last_result;
+            }
+            else {
+                last_result_num = Number(last_result);
+                last_result_num *= 10; // factorial
+                last_result = last_result_num.toString();
+            }
+            
+            is_factorial_entered = true;
+            document.getElementById("lbl_res").innerHTML = last_result;
+        }
     }
 }
