@@ -155,12 +155,12 @@ function click_odd_operators(op) {
         if (op == "back") {
             if (number_str.length > 1)
                 number_str = number_str.slice(0, -1);
-            else
-                number_str = "0";
+            else {
+                number_str = "";
+                click_numbers(0);
+            }
                 
             document.getElementById("lbl_res").innerHTML = number_str;
-            if (number_str == "0")
-                number_str = "";
         }
         else if (op == "+/-") {
             if (is_number_neg) {
