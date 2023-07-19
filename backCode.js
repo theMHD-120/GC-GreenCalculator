@@ -5,16 +5,17 @@ var last_result = ""; // last obtained number (result);
 var last_result_num = 0; // last result with number type;
 var is_number_neg = false; // if entered number was negative;
 var is_number_entered = false; // used in factorial operation;
-var is_factorial_entered = false; // used in click number func;
+var is_fact_inv_entered = false; // used in click number function; 
+// Top variable is for when factorial or inverse operators are entered;
 var lbl_res_back_color = "background-color: rgb(6, 235, 117);";
 
 function click_numbers(number) {
     is_number_entered = true;
     document.getElementById("lbl_res").style = lbl_res_back_color;
 
-    if (is_factorial_entered) {
+    if (is_fact_inv_entered) {
         number_str = "";
-        is_factorial_entered = false;
+        is_fact_inv_entered = false;
     }
 
     if (number_str.length < 12) {
@@ -136,7 +137,7 @@ function click_odd_operators(op) {
         last_result_num = 0;
         is_number_neg = false;
         is_number_entered = false;
-        is_factorial_entered = false;
+        is_fact_inv_entered = false;
         click_numbers(0);
     }
     else if (op == "off") {
@@ -146,7 +147,7 @@ function click_odd_operators(op) {
         last_result = ""; 
         is_number_neg = false;
         is_number_entered = false;
-        is_factorial_entered = false;
+        is_fact_inv_entered = false;
         document.getElementById("lbl_res").innerHTML = "";
         document.getElementById("lbl_res").style = "background-color: rgb(4, 120, 60);";
     }
@@ -171,20 +172,26 @@ function click_odd_operators(op) {
                 number_str = number_str;
             }
         }
-        else if (op == "!") {
+        else if (op == "!" || op == "1/x") {
             if (is_number_entered) {
                 save_last_number();
-                last_number *= 10; // factorial
+                if (op == "!")
+                    last_number *= 10; // factorial
+                else
+                    last_number = 1 / last_number;
                 last_result = last_number.toString();
                 number_str = last_result;
             }
             else {
                 last_result_num = Number(last_result);
-                last_result_num *= 10; // factorial
+                if (op == "!")
+                    last_result_num *= 10; // factorial
+                else
+                    last_result_num = 1 / last_result_num;
                 last_result = last_result_num.toString();
             }
             
-            is_factorial_entered = true;
+            is_fact_inv_entered = true;
             document.getElementById("lbl_res").innerHTML = last_result;
         }
     }
