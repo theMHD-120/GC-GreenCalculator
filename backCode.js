@@ -9,6 +9,64 @@ var is_fact_inv_entered = false; // used in click number function;
 // Top variable is for when factorial or inverse operators are entered;
 var lbl_res_back_color = "background-color: rgb(6, 235, 117);";
 
+
+
+// Called functions (from events functions)...
+
+function save_last_number() {
+    if (number_str == "0.")
+        number_str = "0";
+    last_number = Number(number_str);
+
+    // if (is_number_neg) {
+    //     last_number *= -1;
+    //     is_number_neg = false;
+    // }
+}
+
+function calculate_last_res() {
+    last_result_num = Number(last_result);
+    if (last_result != "") {
+        switch(operator) {
+            case "+":
+                last_result_num += last_number;
+                break;
+            case "-":
+                last_result_num -= last_number;
+                break;
+            case "*":
+                last_result_num *= last_number;
+                break;
+            case "/":
+                last_result_num /= last_number;
+                break;
+            case "%":
+                last_result_num %= last_number;
+                break;
+            case "^":
+                last_result_num **= last_number;
+                break;
+            case "=":
+                last_result_num = last_number;
+                break;
+        }
+        
+        last_result_num = Number(last_result_num.toFixed(10));
+        last_result = last_result_num.toString();
+    } 
+    else {
+        last_result = number_str;
+    }
+}
+
+function factorial() {
+    
+}
+
+
+
+// Events functions ...
+
 function click_numbers(number) {
     is_number_entered = true;
     document.getElementById("lbl_res").style = lbl_res_back_color;
@@ -54,52 +112,6 @@ function click_numbers(number) {
                 document.getElementById("lbl_res").innerHTML = number_str += "0";
                 break;
         }
-    }
-}
-
-function save_last_number() {
-    if (number_str == "0.")
-        number_str = "0";
-    last_number = Number(number_str);
-
-    // if (is_number_neg) {
-    //     last_number *= -1;
-    //     is_number_neg = false;
-    // }
-}
-
-function calculate_last_res() {
-    last_result_num = Number(last_result);
-    if (last_result != "") {
-        switch(operator) {
-            case "+":
-                last_result_num += last_number;
-                break;
-            case "-":
-                last_result_num -= last_number;
-                break;
-            case "*":
-                last_result_num *= last_number;
-                break;
-            case "/":
-                last_result_num /= last_number;
-                break;
-            case "%":
-                last_result_num %= last_number;
-                break;
-            case "^":
-                last_result_num **= last_number;
-                break;
-            case "=":
-                last_result_num = last_number;
-                break;
-        }
-        
-        last_result_num = Number(last_result_num.toFixed(10));
-        last_result = last_result_num.toString();
-    } 
-    else {
-        last_result = number_str;
     }
 }
 
