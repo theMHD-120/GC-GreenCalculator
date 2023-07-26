@@ -189,6 +189,7 @@ function click_odd_operators(op) {
                 save_last_number();
                 if (op == "!")
                     last_number *= 10; // factorial
+                    // factorial(last_number);
                 else
                     last_number = 1 / last_number;
                 last_result = last_number.toString();
@@ -198,6 +199,7 @@ function click_odd_operators(op) {
                 last_result_num = Number(last_result);
                 if (op == "!")
                     last_result_num *= 10; // factorial
+                    // factorial(last_result_num);
                 else
                     last_result_num = 1 / last_result_num;
                 last_result = last_result_num.toString();
