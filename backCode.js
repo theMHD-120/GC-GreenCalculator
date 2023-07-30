@@ -59,8 +59,15 @@ function calculate_last_res() {
     }
 }
 
-function factorial() {
-    
+function factorial(num) {
+    if (num >= 0) {
+        if (num == 0 || num == 1)
+            return 1;
+        else 
+            return num * factorial(num - 1);
+    }
+    else 
+        alert("Type error: Factorial is just used for positive integer numbers.");
 }
 
 
@@ -188,8 +195,7 @@ function click_odd_operators(op) {
             if (is_number_entered) {
                 save_last_number();
                 if (op == "!")
-                    last_number *= 10; // factorial
-                    // factorial(last_number);
+                    last_number = factorial(last_number);
                 else
                     last_number = 1 / last_number;
                 last_result = last_number.toString();
@@ -198,8 +204,7 @@ function click_odd_operators(op) {
             else {
                 last_result_num = Number(last_result);
                 if (op == "!")
-                    last_result_num *= 10; // factorial
-                    // factorial(last_result_num);
+                    last_result_num = factorial(last_result_num);
                 else
                     last_result_num = 1 / last_result_num;
                 last_result = last_result_num.toString();
