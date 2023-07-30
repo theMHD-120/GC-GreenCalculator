@@ -60,14 +60,14 @@ function calculate_last_res() {
 }
 
 function factorial(num) {
-    if (num >= 0) {
+    if (num >= 0 && num == Math.floor(num)) {
         if (num == 0 || num == 1)
             return 1;
         else 
             return num * factorial(num - 1);
     }
     else 
-        alert("Type error: Factorial is just used for positive integer numbers.");
+        alert("Type error: Factorial is only used for positive integers.");
 }
 
 
