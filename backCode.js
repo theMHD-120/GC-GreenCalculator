@@ -80,6 +80,7 @@ function click_numbers(number) {
 
     if (is_fact_inv_entered) {
         number_str = "";
+        last_result = "";
         is_fact_inv_entered = false;
     }
 
@@ -124,6 +125,8 @@ function click_numbers(number) {
 
 function click_even_operators(op) {
     is_number_entered = false;
+    is_fact_inv_entered = false;
+    
     if (!(number_str == "" && operator == "")) {
         if (number_str != "") {
             save_last_number();
