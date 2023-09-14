@@ -2,7 +2,6 @@ body {
   background-color: rgb(1, 19, 10);
   animation: back_color 5s linear 500ms infinite;
 }
-
 @keyframes back_color {
   0% {background-color: rgb(1, 19, 10);}
   25% {background-color: rgb(2, 41, 21);}
@@ -10,7 +9,6 @@ body {
   75% {background-color: rgb(2, 41, 21);}
   100% {background-color: rgb(1, 19, 10);}
 }
-
 #main_body {
   width: 710px;
   margin: auto;
@@ -44,7 +42,6 @@ body {
   margin: auto;
   margin-top: 14px;
 }
-
 button {
   margin: auto;
   width: 110px;
@@ -56,12 +53,10 @@ button {
   background-color: rgb(4, 138, 69);
   border: rgb(5, 201, 100) solid 2px;
 }
-
 button:hover {
   background-color: rgb(8, 164, 83);
   border: rgb(7, 245, 122) solid 2px;
 }
-
 button:active {
   color: rgb(1, 44, 14);
   border: rgb(119, 241, 178) solid 2px;
@@ -72,30 +67,29 @@ button:active {
   font-size: 30px;
   background-color: rgb(4, 172, 85);
 }
-
 #operator_even:hover, #operator_odd:hover {
   background-color: rgb(6, 235, 117);
   border: rgb(6, 235, 117) solid 2px;
 }
-
 #operator_even:focus, #operator_odd:active {
   color: rgb(1, 44, 14);
   border: rgb(119, 241, 178) solid 2px;
   background-color: rgb(119, 241, 178);
 }
 
+a {
+  text-decoration: none;
+  color: rgb(119, 241, 178);
+}
 #name {
   font-size: 23px;
   margin-top: 5px;
   text-align: center;
-  color: rgb(119, 241, 178);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 #name_hover {
   transition: 200ms;
 }
-
 #name_hover:hover {
   color: rgb(193, 239, 215);
 }
