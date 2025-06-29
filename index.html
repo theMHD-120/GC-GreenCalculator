@@ -1,112 +1,162 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>GC GreenCalculator</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="icon.png">
-    </head>
-    <body>
-        <div id="main_body">
-            <table id="btn_table">
-                <tr>
-                    <div id="lbl_res"></div>
-                </tr>
-                <tr>
-                    <td>
-                        <button onclick="click_numbers(7)">7</button>
-                    </td>
-                    <td>
-                        <button onclick="click_numbers(8)">8</button>
-                    </td>
-                    <td>
-                        <button onclick="click_numbers(9)">9</button>
-                    </td>
-                    <td>
-                        <button id="operator_even" onclick="click_even_operators('+')">+</button>
-                    </td>
-                    <td>
-                        <button id="operator_odd" onclick="click_odd_operators('back')">Back</button>
-                    </td>
-                    <td>
-                        <button id="operator_odd" title="On/Reset" tabindex="1" onclick="click_odd_operators('o/r')">
-                            On/Re
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button onclick="click_numbers(4)">4</button>
-                    </td>
-                    <td>
-                        <button onclick="click_numbers(5)">5</button>
-                    </td>
-                    <td>
-                        <button onclick="click_numbers(6)">6</button>
-                    </td>
-                    <td>
-                        <button id="operator_even" onclick="click_even_operators('-')">−</button>
-                    </td>
-                    <td>
-                        <button id="operator_even" title="Mod" onclick="click_even_operators('%')">%</button>
-                    </td>
-                    <td>
-                        <button id="operator_odd" onclick="click_odd_operators('off')">Off</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button onclick="click_numbers(1)">1</button>
-                    </td>
-                    <td>
-                        <button onclick="click_numbers(2)">2</button>
-                    </td>
-                    <td>
-                        <button onclick="click_numbers(3)">3</button>
-                    </td>
-                    <td>
-                        <button id="operator_even" onclick="click_even_operators('*')">×</button>
-                    </td>
-                    <td>
-                        <button id="operator_even" title="Power" onclick="click_even_operators('^')">^</button>
-                    </td>
-                    <td>
-                        <button id="operator_odd" title="Factorial" onclick="click_odd_operators('!')">!</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button id="operator_odd" onclick="click_odd_operators('+/-')">+/−</button>
-                    </td>
-                    <td>
-                        <button onclick="click_numbers(0)">0</button>
-                    </td>
-                    <td>
-                        <button id="operator_odd" onclick="click_odd_operators('.')">.</button>
-                    </td>
-                    <td>
-                        <button id="operator_even" onclick="click_even_operators('/')">÷</button>
-                    </td>
-                    <td>
-                        <button id="operator_odd" onclick="click_even_operators('=')">=</button>
-                    </td>
-                    <td>
-                        <button id="operator_odd" title="inverse" onclick="click_odd_operators('1/x')"><sup>1</sup><cite>/</cite><sub>x</sub></button>
-                    </td>
-                </tr>
-            </table>
-            <div id="name">
-                <a href="https://github.com/theMHD-120/GC-GreenCalculator" target="_blank">
-                    <span id="name_hover" title="Click to view the github profile">
-                        GC - by theMHD
-                    </span>
-                </a>
-            </div>
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>GC GreenCalculator</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="./images/icon.png" />
+  </head>
+  <body>
+    <div id="main_body">
+      <table id="btn_table">
+        <tr>
+          <div id="lbl_res"></div>
+        </tr>
+        <tr>
+          <td>
+            <button onclick="click_numbers(7)">7</button>
+          </td>
+          <td>
+            <button onclick="click_numbers(8)">8</button>
+          </td>
+          <td>
+            <button onclick="click_numbers(9)">9</button>
+          </td>
+          <td>
+            <button id="operator_even" onclick="click_even_operators('+')">
+              +
+            </button>
+          </td>
+          <td>
+            <button id="operator_odd" onclick="click_odd_operators('back')">
+              Back
+            </button>
+          </td>
+          <td>
+            <button
+              id="operator_odd"
+              title="On/Reset"
+              tabindex="1"
+              onclick="click_odd_operators('o/r')"
+            >
+              On/Re
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button onclick="click_numbers(4)">4</button>
+          </td>
+          <td>
+            <button onclick="click_numbers(5)">5</button>
+          </td>
+          <td>
+            <button onclick="click_numbers(6)">6</button>
+          </td>
+          <td>
+            <button id="operator_even" onclick="click_even_operators('-')">
+              −
+            </button>
+          </td>
+          <td>
+            <button
+              id="operator_even"
+              title="Mod"
+              onclick="click_even_operators('%')"
+            >
+              %
+            </button>
+          </td>
+          <td>
+            <button id="operator_odd" onclick="click_odd_operators('off')">
+              Off
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button onclick="click_numbers(1)">1</button>
+          </td>
+          <td>
+            <button onclick="click_numbers(2)">2</button>
+          </td>
+          <td>
+            <button onclick="click_numbers(3)">3</button>
+          </td>
+          <td>
+            <button id="operator_even" onclick="click_even_operators('*')">
+              ×
+            </button>
+          </td>
+          <td>
+            <button
+              id="operator_even"
+              title="Power"
+              onclick="click_even_operators('^')"
+            >
+              ^
+            </button>
+          </td>
+          <td>
+            <button
+              id="operator_odd"
+              title="Factorial"
+              onclick="click_odd_operators('!')"
+            >
+              !
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="operator_odd" onclick="click_odd_operators('+/-')">
+              +/−
+            </button>
+          </td>
+          <td>
+            <button onclick="click_numbers(0)">0</button>
+          </td>
+          <td>
+            <button id="operator_odd" onclick="click_odd_operators('.')">
+              .
+            </button>
+          </td>
+          <td>
+            <button id="operator_even" onclick="click_even_operators('/')">
+              ÷
+            </button>
+          </td>
+          <td>
+            <button id="operator_odd" onclick="click_even_operators('=')">
+              =
+            </button>
+          </td>
+          <td>
+            <button
+              id="operator_odd"
+              title="inverse"
+              onclick="click_odd_operators('1/x')"
+            >
+              <sup>1</sup><cite>/</cite><sub>x</sub>
+            </button>
+          </td>
+        </tr>
+      </table>
+      <div id="name">
+        <a
+          href="https://github.com/theMHD-120/GC-GreenCalculator"
+          target="_blank"
+        >
+          <span id="name_hover" title="Click to view the github profile">
+            GC - by theMHD
+          </span>
+        </a>
+      </div>
+    </div>
 
-        <script type="text/javascript" src="backCode.js" async defer></script>
-    </body>
+    <script type="text/javascript" src="backCode.js" async defer></script>
+  </body>
 </html>
